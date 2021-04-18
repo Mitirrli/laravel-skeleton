@@ -17,7 +17,7 @@
 1. 创建项目
 
 ```bash
-$ composer create-project overtrue/laravel-skeleton -vvv
+$ composer create-project mitirrli/laravel-skeleton -vvv
 ```
 
 
