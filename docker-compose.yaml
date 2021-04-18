@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+    laravel-skeleton:
+        container_name: laravel-skeleton
+        build:
+            context: .docker/php
+            dockerfile: Dockerfile
+        ports:
+            - "8090:8090"
+        volumes:
+            - ./:/www
+        tty: true
+        restart: always
+
+    laravel-skeleton-redis:
+        container_name: laravel-skeleton-redis
+        image: redis
+        command: redis-server --requirepass root:root
+        ports:
+            - "6679:6379"
+        restart: always
