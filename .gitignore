@@ -18,7 +18,6 @@ npm-debug.log
 yarn-error.log
 phpunit.dusk.xml
 *.code-workspace
-package-lock.json
 .idea
 .php_cs.cache
 .phpstorm.meta.php
@@ -26,3 +25,4 @@ _ide_helper.php
 cghooks.lock
 hooks
 .env.backup
+.history
