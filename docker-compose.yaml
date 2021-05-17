@@ -1,0 +1,56 @@
+version: "3.7"
+
+services:
+    laravel-skeleton:
+        container_name: laravel-skeleton
+        build:
+            context: .docker/php
+            dockerfile: Dockerfile
+        ports:
+            - "8090:8090"
+        volumes:
+            - ./:/www
+        tty: true
+        restart: always
+
+    laravel-skeleton-redis:
+        container_name: laravel-skeleton-redis
+        image: redis
+        command: redis-server --requirepass root:root
+        ports:
+            - "6679:6379"
+        restart: always
+
+    laravel-skeleton-mysql:
+        container_name: laravel-skeleton-mysql
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - .docker/mysql:/var/lib/mysql
+        ports:
+            - "3309:3306"
+        restart: always
+
+    laravel-skeleton-es:
+        container_name: laravel-skeleton-es
+        build:
+            context: .docker/elasticsearch
+            args:
+                - ELK_VERSION=7.12.0
+        restart: always
+        environment:
+            - "discovery.type=single-node"
+            - "xpack.security.enabled=true"
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - ELASTIC_PASSWORD=changeme
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - .docker/elasticsearch/data:/usr/share/elasticsearch/data
+        ports:
+            - "9204:9200"

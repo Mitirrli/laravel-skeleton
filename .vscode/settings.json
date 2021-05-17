@@ -1,0 +1,21 @@
+{
+  "remote.SSH.defaultForwardedPorts": [
+    {
+      "name": "php",
+      "localPort": 8090,
+      "remotePort": 8090,
+    }
+  ],
+  "files.autoSave": "onFocusChange",
+  "workbench.editor.limit.enabled": true,
+  "search.quickOpen.includeHistory": false,
+  "task.quickOpen.history": 15,
+  "editor.wordWrapColumn": 85,
+  "workbench.colorTheme": "One Monokai",
+  "editor.formatOnSave": true,
+  "php.suggest.basic": false,
+  "intelephense.environment.phpVersion": "8.0.3",
+  "cSpell.ignoreWords": [
+    "adcode"
+  ],
+}

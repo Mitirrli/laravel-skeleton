@@ -1,0 +1,22 @@
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+
+type Query {
+    users(orderBy: _ @orderBy(columns: ["uid"])): [User!]! @paginate(defaultCount: 10, maxCount: 10)
+    user(uid: ID @eq): User @find
+}
+
+type User {
+    uid: ID!
+    username: String!
+    products: [Product!]! @hasMany
+}
+
+type Product {
+    id: ID!
+    product_name: String!
+}

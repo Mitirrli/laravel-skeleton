@@ -1,0 +1,32 @@
+{
+  "name": "laravel-skeleton",
+  "version": "1.0.0",
+  "description": "开箱即用的 Laravel API 基础结构。 > 自己用的哈，仅供参考，不提供咨询解答服务。",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitirrli/laravel-skeleton.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitirrli/laravel-skeleton/issues"
+  },
+  "homepage": "https://github.com/Mitirrli/laravel-skeleton#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
