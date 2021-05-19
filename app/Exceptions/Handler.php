@@ -44,6 +44,6 @@ class Handler extends ExceptionHandler
         $errors = $exception->errors();
         $firstError = \reset($errors);
 
-        return \response($firstError[0] ?? '参数错误', 422);
+        return \response($firstError[0], 422);
     }
 }
