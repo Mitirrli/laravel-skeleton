@@ -12,7 +12,9 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected $dontReport = [];
+    protected $dontReport = [
+        BusinessException::class
+    ];
 
     /**
      * A list of the inputs that are never flashed for validation exceptions.
