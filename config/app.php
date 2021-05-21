@@ -171,7 +171,6 @@ return [
         /*
          * Package Service Providers...
          */
-        App\Providers\AnnotationsServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
         /*
